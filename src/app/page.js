@@ -1,3 +1,5 @@
+import Features from '@/components/Features'
+import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import Navbar from '@/components/Navbar'
 import SideBar from '@/components/SideBar'
@@ -9,7 +11,8 @@ const page = () => {
       <Navbar />
       <SideBar />
       <Header />
-      <Header />
+      <Features />
+      <Footer />
     </>
   )
 }

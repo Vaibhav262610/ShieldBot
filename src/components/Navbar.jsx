@@ -33,9 +33,14 @@ const Navbar = () => {
                     </div>
 
                     {/* Desktop Buttons */}
-                    <div className="hidden xl:flex gap-5">
-                        <button className="text-gray-400 hover:text-blue-300 duration-200">Log In</button>
-                        <button className="text-md bg-blue-700 hover:bg-blue-600 duration-300 px-6 py-3 rounded-xl">Sign Up</button>
+                    <div className="hidden xl:flex items-center gap-5">
+
+                        <Link href='/login'>
+                            <button className="text-gray-400 hover:text-blue-300 duration-200">Log In</button>
+                        </Link>
+                        <Link href='/signup'>
+                            <button className="text-md bg-blue-700 hover:bg-blue-600 duration-300 px-6 py-3 rounded-xl">Sign Up</button>
+                        </Link>
                     </div>
                 </div>
             </nav>
@@ -48,8 +53,12 @@ const Navbar = () => {
                 <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
                 <Link href="/about" onClick={() => setMenuOpen(false)}>About Us</Link>
                 <Link href="/faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
-                <button className="text-gray-400 hover:text-blue-300 duration-200" onClick={() => setMenuOpen(false)}>Log In</button>
-                <button className="text-xl bg-blue-700 hover:bg-blue-600 duration-300 px-6 py-3 rounded-xl" onClick={() => setMenuOpen(false)}>Sign Up</button>
+                <Link href='/login'>
+                    <button className="text-gray-400 hover:text-blue-300 duration-200" onClick={() => setMenuOpen(false)}>Log In</button>
+                </Link>
+                <Link href='/signup'>
+                    <button className="text-xl bg-blue-700 hover:bg-blue-600 duration-300 px-6 py-3 rounded-xl" onClick={() => setMenuOpen(false)}>Sign Up</button>
+                </Link>
             </div>
         </div >
     );
