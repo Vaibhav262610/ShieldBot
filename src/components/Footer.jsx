@@ -3,11 +3,13 @@ import { Facebook, Twitter, Linkedin, Github } from "lucide-react";
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-white py-12 px-6 text-center flex flex-col items-center shadow-lg border-t border-gray-700 w-full">
-            <h3 className="text-2xl font-bold text-blue-400 tracking-wide">ShieldBot</h3>
-            <p className="text-lg text-gray-300 max-w-lg mt-3 leading-relaxed text-center px-4">
-                Test your website’s resilience with real-world DDoS simulations and fortify your defenses.
-            </p>
+        <footer className="bg-gray-900 text-white  py-12 px-6 text-center flex  items-center justify-around shadow-lg border-t border-gray-700 w-full">
+            <div className="flex flex-col">
+                <h3 className="text-2xl font-bold text-blue-400 tracking-wide">ShieldBot</h3>
+                <p className="text-lg text-gray-300 max-w-lg mt-3 leading-relaxed text-center px-4">
+                    Test your website’s resilience with real-world DDoS simulations and fortify your defenses.
+                </p>
+            </div>
             <div className="flex space-x-6 mt-6 flex-wrap justify-center">
                 <a href="#" className="hover:text-blue-500 transition-transform transform hover:scale-110">
                     <Facebook size={28} />
