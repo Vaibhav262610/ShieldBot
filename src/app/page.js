@@ -1,3 +1,4 @@
+import Faq from '@/components/Faq'
 import Features from '@/components/Features'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
@@ -13,6 +14,7 @@ const page = () => {
       <SideBar />
       <Header />
       <Features />
+      <Faq />
       <Team />
       <Footer />
     </>
