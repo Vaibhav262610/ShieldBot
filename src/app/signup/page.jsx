@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FaEnvelope, FaLock } from "react-icons/fa";
+import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 
 const ShootingStar = () => {
     const [stars, setStars] = useState([]);
@@ -39,7 +39,7 @@ const ShootingStar = () => {
     );
 };
 
-const Login = () => {
+const Signup = () => {
     return (
         <div className="relative min-h-screen flex items-center justify-center bg-gray-900 text-white px-6 overflow-hidden">
             {/* Animated Background */}
@@ -53,9 +53,17 @@ const Login = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <h2 className="text-4xl font-extrabold text-blue-400 mb-8 animate-pulse">Welcome Back to ShieldBot</h2>
-                <p className="text-lg text-gray-300 mb-6">Secure your access with ShieldBot’s advanced authentication.</p>
+                <h2 className="text-4xl font-extrabold text-blue-400 mb-8 animate-pulse">Create Your ShieldBot Account</h2>
+                <p className="text-lg text-gray-300 mb-6">Join ShieldBot and experience top-tier security.</p>
                 <form className="flex flex-col space-y-5">
+                    <div className="relative">
+                        <FaUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                        <input
+                            type="text"
+                            placeholder="Enter your name"
+                            className="w-full pl-12 px-5 py-3 bg-gray-700 text-lg rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-400"
+                        />
+                    </div>
                     <div className="relative">
                         <FaEnvelope className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
                         <input
@@ -76,12 +84,12 @@ const Login = () => {
                         type="submit"
                         className="w-full bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white py-3 rounded-lg text-lg font-bold transition duration-300 shadow-lg hover:shadow-blue-500/50"
                     >
-                        🔒 Login Securely
+                        🚀 Sign Up Securely
                     </button>
                 </form>
-                <Link href='/signup' className="">
+                <Link href='/login' className="">
                     <p className="text-md text-gray-400 mt-6">
-                        Don't have an account? <span className="text-blue-400 hover:underline font-semibold transition duration-300 hover:text-blue-300">Sign up now</span>
+                        Already have an account? <span className="text-blue-400 hover:underline font-semibold transition duration-300 hover:text-blue-300">Login here</span>
                     </p>
                 </Link>
             </motion.div>
@@ -89,4 +97,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Signup;
