@@ -50,9 +50,9 @@ const Navbar = () => {
                 className={`z-40 fixed inset-0 bg-[#1f252c] text-white flex flex-col items-center justify-center gap-8 text-2xl font-medium transform transition-transform duration-500 ${menuOpen ? "translate-x-0" : "translate-x-full"
                     } xl:hidden`}
             >
-                <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
-                <Link href="/about" onClick={() => setMenuOpen(false)}>About Us</Link>
-                <Link href="/faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
+                <Link href="#home" onClick={() => setMenuOpen(false)}>Home</Link>
+                <Link href="#about" onClick={() => setMenuOpen(false)}>About Us</Link>
+                <Link href="#faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
                 <Link href='/login'>
                     <button className="text-gray-400 hover:text-blue-300 duration-200" onClick={() => setMenuOpen(false)}>Log In</button>
                 </Link>
