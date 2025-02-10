@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import Navbar from '@/components/Navbar'
 import SideBar from '@/components/SideBar'
+import Team from '@/components/Team'
 import React from 'react'
 
 const page = () => {
@@ -12,6 +13,7 @@ const page = () => {
       <SideBar />
       <Header />
       <Features />
+      <Team />
       <Footer />
     </>
   )

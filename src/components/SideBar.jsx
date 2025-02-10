@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
-import { FiHome, FiInfo, FiLogOut } from 'react-icons/fi';
+import { FiHome, FiUsers, FiLogOut } from 'react-icons/fi';
 
 const SideBar = () => {
     const pathname = usePathname(); // Get current route
@@ -15,9 +15,9 @@ const SideBar = () => {
                     <FiHome className="text-2xl" />
                 </div>
             </Link>
-            <Link href="/about">
+            <Link href="#team">
                 <div className={`px-6 py-4 rounded-lg transition duration-200 ${pathname === "/about" ? "bg-blue-700" : "hover:bg-gray-700"}`}>
-                    <FiInfo className="text-2xl" />
+                    <FiUsers className="text-2xl" />
                 </div>
             </Link>
             <button>

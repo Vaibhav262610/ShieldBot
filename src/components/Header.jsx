@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 const Header = () => {
     return (
         <div
+            id="home"
             className="relative h-screen w-full flex justify-center items-center text-white bg-cover bg-center px-4 sm:px-8"
             style={{ backgroundImage: "url('/bg.webp')" }}
         >

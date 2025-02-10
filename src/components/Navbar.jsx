@@ -27,9 +27,9 @@ const Navbar = () => {
 
                     {/* Desktop Menu */}
                     <div className="hidden xl:flex gap-5 text-xl font-medium text-gray-400">
-                        <Link href="/"><h1 className="hover:bg-gray-600/20 px-5 py-2 rounded-md hover:text-white duration-200">Home</h1></Link>
-                        <Link href="/about"><h1 className="hover:bg-gray-600/20 px-5 py-2 rounded-md hover:text-white duration-200">About Us</h1></Link>
-                        <Link href="/faq"><h1 className="hover:bg-gray-600/20 px-5 py-2 rounded-md hover:text-white duration-200">FAQ</h1></Link>
+                        <Link href="#home"><h1 className="hover:bg-gray-600/20 px-5 py-2 rounded-md hover:text-white duration-200">Home</h1></Link>
+                        <Link href="#about"><h1 className="hover:bg-gray-600/20 px-5 py-2 rounded-md hover:text-white duration-200">About Us</h1></Link>
+                        <Link href="#faq"><h1 className="hover:bg-gray-600/20 px-5 py-2 rounded-md hover:text-white duration-200">FAQ</h1></Link>
                     </div>
 
                     {/* Desktop Buttons */}

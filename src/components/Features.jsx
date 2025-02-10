@@ -7,7 +7,7 @@ import { Fade } from "react-awesome-reveal";
 
 const Features = () => {
     return (
-        <div className="min-h-screen border-t border-white/30 text-white flex flex-col items-center justify-center px-6 py-12 w-full">
+        <div id="about" className="min-h-screen border-t border-white/30 text-white flex flex-col items-center justify-center px-6 py-12 w-full">
             <motion.h1
                 className="text-4xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
                 initial={{ opacity: 0, y: -20 }}
