@@ -33,8 +33,8 @@ const SideBar = () => {
 
     return (
         <div className="z-50 fixed top-1/2 left-5 border border-white/10 transform -translate-y-1/2 bg-gray-800/80 text-white xl:flex flex-col items-center gap-16 py-16 px-4 rounded-xl hidden">
-            <button onClick={() => handleClick("#home")}>
-                <div className={`px-6 py-4 rounded-lg transition duration-200 ${activeHash === "#home" ? "bg-blue-700" : "hover:bg-gray-700"}`}>
+            <button onClick={() => handleClick("")}>
+                <div className={`px-6 py-4 rounded-lg transition duration-200 ${activeHash === "" ? "bg-blue-700" : "hover:bg-gray-700"}`}>
                     <FiHome className="text-2xl" />
                 </div>
             </button>

@@ -9,7 +9,8 @@ html {
 
 body {
   background-color: #151920;
-  font-family: "Poppins", serif;
+  /* font-family: "Poppins", serif; */
+  font-family: "Bricolage Grotesque", serif;
 }
 
 .nav {
