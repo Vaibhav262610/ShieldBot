@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import Magnet from "./Magnet";
-import TextPressure from "./TextPressure";
+import RotatingText from "./RotatingText";
 
 const Header = () => {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -38,23 +38,19 @@ const Header = () => {
                 className="relative flex flex-col items-center text-center gap-6 sm:gap-8 md:gap-10 px-4"
             >
                 <div>
-                    <h1 className="font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-tight text-white drop-shadow-xl">
-                        <div>
-
-                            <TextPressure
-                                text="Secure Your Security"
-                                flex={true}
-                                alpha={false}
-                                stroke={false}
-                                width={true}
-                                weight={true}
-                                italic={true}
-                                // textColor="#ffffff"
-                                strokeColor="#ff0000"
-                                minFontSize={60}
-                            />
-                        </div>
-                        {/* </span> */}
+                    <h1 className="font-extrabold text-5xl sm:text-6xl md:text-7xl flex gap-10 lg:text-8xl tracking-tight leading-tight text-white drop-shadow-xl">
+                        Secure Your <span className="text-green-400 text-7xl"><RotatingText
+                            texts={['Security', 'Shield', 'Encryption', 'Privacy!']}
+                            mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+                            staggerFrom={"last"}
+                            initial={{ y: "100%" }}
+                            animate={{ y: 0 }}
+                            exit={{ y: "-120%" }}
+                            staggerDuration={0.025}
+                            splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                            transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                            rotationInterval={2000}
+                        /></span>
                     </h1>
                     <h1 className="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-green-400 mt-2 sm:mt-3 flex items-center justify-center">
                         Before Hackers Do! <SparklesIcon className="w-8 h-8 ml-2 text-yellow-300" />
@@ -73,8 +69,8 @@ const Header = () => {
                     </motion.button>
                 </Magnet>
 
-            </motion.div >
-        </div >
+            </motion.div>
+        </div>
     );
 };
 
