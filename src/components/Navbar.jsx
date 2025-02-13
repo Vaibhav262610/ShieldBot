@@ -1,5 +1,6 @@
 "use client"
 
+import DelayedLink from '@/contexts/DelayLink';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
@@ -9,7 +10,7 @@ const Navbar = () => {
 
     return (
         <div className='flex w-full justify-center'>
-            <nav className="fixed border border-white/10 top-5 w-[90%] md:w-1/2 py-3 mx-auto nav  text-white rounded-xl z-50">
+            <nav className="fixed border border-white/10 top-5 w-[90%] md:w-1/2 py-3 mx-auto nav  text-white rounded-xl z-40">
                 <div className="flex justify-between items-center py-4 px-6">
                     <Link href="/">
                         <h1 className="text-2xl xl:text-4xl font-bold cursor-pointer">
@@ -35,12 +36,12 @@ const Navbar = () => {
                     {/* Desktop Buttons */}
                     <div className="hidden xl:flex items-center gap-5">
 
-                        <Link href='/login'>
+                        <DelayedLink delay={500} href='/login'>
                             <button className="text-gray-400 hover:text-blue-300 duration-200">Log In</button>
-                        </Link>
-                        <Link href='/signup'>
+                        </DelayedLink>
+                        <DelayedLink delay={500} href='/signup'>
                             <button className="text-md bg-blue-700 hover:bg-blue-600 duration-300 px-6 py-3 rounded-xl">Sign Up</button>
-                        </Link>
+                        </DelayedLink>
                     </div>
                 </div>
             </nav>

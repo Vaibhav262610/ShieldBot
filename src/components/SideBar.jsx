@@ -41,7 +41,7 @@ const SideBar = () => {
     };
 
     return (
-        <div className="z-50 fixed top-1/2 left-5 transform -translate-y-1/2 bg-white/10 backdrop-blur-lg shadow-lg border border-white/20
+        <div className="z-40 fixed top-1/2 left-5 transform -translate-y-1/2 bg-white/10 backdrop-blur-lg shadow-lg border border-white/20
             text-white xl:flex flex-col items-center gap-10 py-6 px-4 rounded-3xl hidden transition-all duration-500">
 
             {/* Home Button */}

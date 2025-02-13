@@ -1,11 +1,16 @@
 "use client";
 
+import { useLoading } from "@/contexts/LoadingContext";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { FiHome, FiGrid, FiUser, FiLogOut, FiMenu, FiX } from "react-icons/fi";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar } from "recharts";
 
 const Dashboard = () => {
+    const { setLoading } = useLoading();
+    const router = useRouter()
     const [activeTab, setActiveTab] = useState("Layer 4");
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -22,9 +27,26 @@ const Dashboard = () => {
         { status: "Pending", count: 3 },
         { status: "Stopped", count: 2 },
     ];
+    const handleLogout = () => {
+        setLoading(true);  // Show loading screen
+
+        localStorage.clear(); // Clear stored data
+        toast.success("Successfully logged out!"); // Show success message
+
+        setTimeout(() => {
+            router.push("/");
+        }, 1500);
+
+        // Stop loading after navigation completes
+        setTimeout(() => {
+            setLoading(false);
+        }, 1800);
+    };
+
 
     return (
         <div className="flex h-screen w-full bg-[#0f172a] text-white">
+            <Toaster position="top-right" reverseOrder={false} />
             {/* Mobile Navbar */}
             <nav className="fixed top-5 left-0 w-full bg-[#1a1d29] p-4 flex items-center justify-between md:hidden z-50">
                 <h2 className="text-xl font-semibold text-blue-400">ShieldBot</h2>
@@ -38,7 +60,9 @@ const Dashboard = () => {
                 className={`fixed md:relative top-0 left-0 w-64 md:w-24 h-full bg-[#1a1d29] flex flex-col items-center py-10 border-r border-white/10 transition-transform ${menuOpen ? "translate-x-0" : "-translate-x-full"
                     } md:translate-x-0 z-40`}
             >
-                <div className="text-blue-400 text-3xl font-bold">SB</div>
+                <Link href="/">
+                    <div className="text-blue-400 text-3xl font-bold">SB</div>
+                </Link>
 
                 <div className="flex flex-col flex-1 items-center justify-center space-y-10 mt-4">
                     <Link href='/'>
@@ -49,7 +73,7 @@ const Dashboard = () => {
                 </div>
 
                 <div className="pb-10">
-                    <FiLogOut className="text-3xl cursor-pointer hover:text-red-500" />
+                    <FiLogOut onClick={handleLogout} className="text-3xl cursor-pointer hover:text-red-500" />
                 </div>
             </aside>
 
