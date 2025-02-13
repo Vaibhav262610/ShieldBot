@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { useRouter } from "next/navigation"; // Use next/navigation for routing in Next.js 13+
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
@@ -9,7 +9,7 @@ import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 const Signup = () => {
     const router = useRouter(); // Next.js router
     const [formData, setFormData] = useState({
-        name: "",
+        username: "",
         email: "",
         password: "",
     });
@@ -28,6 +28,7 @@ const Signup = () => {
         setMessage(null);
 
         try {
+            console.log("Submitting:", formData);
             const response = await fetch("http://3.110.185.252/auth/signup", {
                 method: "POST",
                 headers: {
@@ -37,19 +38,19 @@ const Signup = () => {
             });
 
             const data = await response.json();
-            console.log("Response:", data); // Log API response
+            console.log("Response Data:", data);
 
             if (response.ok) {
-                setMessage("Signup successful! Redirecting...");
+                setMessage("✅ Signup successful! Redirecting...");
                 setTimeout(() => {
-                    router.push("/login"); // Redirect to login
+                    router.push("/dashboard");
                 }, 2000);
             } else {
-                setMessage(data.message || "Signup failed. Try again.");
+                setMessage(`❌ ${data.message || "Signup failed. Try again."}`);
             }
         } catch (error) {
             console.error("Error:", error);
-            setMessage("An error occurred. Please try again.");
+            setMessage("❌ An error occurred. Please try again.");
         } finally {
             setLoading(false);
         }
@@ -73,18 +74,20 @@ const Signup = () => {
                 {message && <p className="text-green-400 mb-4">{message}</p>}
 
                 <form className="flex flex-col space-y-5" onSubmit={handleSubmit}>
+                    {/* ✅ Fixed: Ensure "username" is used instead of "name" */}
                     <div className="relative">
                         <FaUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
                         <input
                             type="text"
-                            name="name"
-                            value={formData.name}
+                            name="username" // ✅ Fixed field name
+                            value={formData.username}
                             onChange={handleChange}
-                            placeholder="Enter your name"
+                            placeholder="Enter your username"
                             className="w-full pl-12 px-5 py-3 bg-gray-700 text-lg rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-400"
                             required
                         />
                     </div>
+
                     <div className="relative">
                         <FaEnvelope className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
                         <input
@@ -97,6 +100,7 @@ const Signup = () => {
                             required
                         />
                     </div>
+
                     <div className="relative">
                         <FaLock className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
                         <input
@@ -109,12 +113,13 @@ const Signup = () => {
                             required
                         />
                     </div>
+
                     <button
                         type="submit"
                         className="w-full bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white py-3 rounded-lg text-lg font-bold transition duration-300 shadow-lg hover:shadow-blue-500/50"
                         disabled={loading}
                     >
-                        {loading ? "Signing Up..." : "🚀 Sign Up Securely"}
+                        {loading ? "🔄 Signing Up..." : "🚀 Sign Up Securely"}
                     </button>
                 </form>
 
