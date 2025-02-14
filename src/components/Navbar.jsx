@@ -25,7 +25,7 @@ const Navbar = () => {
 
     return (
         <div className='flex w-full justify-center'>
-            <nav className="fixed border border-white/10 top-5 w-[90%] md:w-1/2 py-3 mx-auto text-white rounded-xl z-40">
+            <nav className="fixed border border-white/10 top-5 w-[90%] md:w-1/2 py-3 mx-auto bg-white/10 backdrop-blur-md text-white rounded-xl z-40">
                 <div className="flex justify-between items-center py-4 px-6">
                     <Link href="/">
                         <h1 className="text-2xl xl:text-4xl font-bold cursor-pointer">
