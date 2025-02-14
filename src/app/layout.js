@@ -20,9 +20,9 @@ export default function RootLayout({ children }) {
         <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet" />
       </head>
       <body>
-        <LoadingProvider>
-          {children}
-        </LoadingProvider>
+        {/* <LoadingProvider> */}
+        {children}
+        {/* </LoadingProvider> */}
       </body>
     </html>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { useLoading } from "@/contexts/LoadingContext";
+// import { useLoading } from "@/contexts/LoadingContext";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -9,7 +9,7 @@ import { FiHome, FiGrid, FiUser, FiLogOut, FiMenu, FiX } from "react-icons/fi";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar } from "recharts";
 
 const Dashboard = () => {
-    const { setLoading } = useLoading();
+    // const { setLoading } = useLoading();
     const router = useRouter()
     const [activeTab, setActiveTab] = useState("Layer 4");
     const [menuOpen, setMenuOpen] = useState(false);
@@ -28,7 +28,7 @@ const Dashboard = () => {
         { status: "Stopped", count: 2 },
     ];
     const handleLogout = () => {
-        setLoading(true);  // Show loading screen
+        // setLoading(true);  // Show loading screen
 
         localStorage.clear(); // Clear stored data
         toast.success("Successfully logged out!"); // Show success message
