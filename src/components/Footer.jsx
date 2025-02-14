@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-md">
                 <h3 className="text-3xl font-extrabold text-blue-400 tracking-wide">ShieldBot</h3>
                 <p className="text-lg text-gray-300 mt-3 leading-relaxed px-4 md:px-0">
-                    Test your website’s resilience with real-world DDoS simulations and fortify your defenses.
+                    Test your website&apos;s resilience with real-world DDoS simulations and fortify your defenses.
                 </p>
             </div>
 

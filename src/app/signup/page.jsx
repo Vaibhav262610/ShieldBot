@@ -29,7 +29,7 @@ const Signup = () => {
 
         try {
             console.log("Submitting:", formData);
-            const response = await fetch("http://3.110.185.252/auth/signup", {
+            const response = await fetch("http://192.168.250.245:5000/auth/signup", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

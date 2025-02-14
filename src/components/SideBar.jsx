@@ -1,14 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation"; // Ensure we track URL changes
 import { FiHome, FiUsers, FiLogOut } from "react-icons/fi";
 
 const SideBar = () => {
     const [activeHash, setActiveHash] = useState("");
     const [showTooltip, setShowTooltip] = useState(null); // Tooltip state
-    const pathname = usePathname(); // Track pathname to reset state if needed
 
     useEffect(() => {
         const updateHash = () => {
@@ -36,7 +33,8 @@ const SideBar = () => {
     const handleLogout = () => {
         const confirmLogout = window.confirm("Are you sure you want to log out?");
         if (confirmLogout) {
-            console.log("User logged out"); // Replace with actual logout function
+            localStorage.clear(); // Clear local storage
+            window.location.reload(); // Reload page to reflect logout state
         }
     };
 
@@ -81,7 +79,7 @@ const SideBar = () => {
                 onClick={handleLogout}
                 onMouseEnter={() => setShowTooltip("Logout")}
                 onMouseLeave={() => setShowTooltip(null)}
-                className="relative px-6 py-4 rounded-full  hover:bg-red-700 transition duration-300 flex items-center justify-center shadow-md"
+                className="relative px-6 py-4 rounded-full hover:bg-red-700 transition duration-300 flex items-center justify-center shadow-md"
             >
                 <FiLogOut className="text-2xl" />
                 {showTooltip === "Logout" && (

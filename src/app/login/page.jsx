@@ -56,7 +56,7 @@ const Login = () => {
         console.log("🔍 Sending Login Data:", loginData); // ✅ Logs form data before sending
 
         try {
-            const response = await fetch("http://3.110.185.252/auth/login", {
+            const response = await fetch("http://192.168.250.245:5000/auth/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -75,11 +75,10 @@ const Login = () => {
             if (result.token) {
                 localStorage.setItem("authToken", result.token);
             }
-
             // ✅ Redirect to Dashboard or another page after login
             router.push("/dashboard");
         } catch (err) {
-            console.error("❌ Login Error:", err.message);
+            console.log("❌ Login Error:", err.message);
             setError(err.message);
         } finally {
             setLoading(false);
@@ -99,7 +98,7 @@ const Login = () => {
                 transition={{ duration: 0.5 }}
             >
                 <h2 className="text-4xl font-extrabold text-blue-400 mb-8 animate-pulse">Welcome Back to ShieldBot</h2>
-                <p className="text-lg text-gray-300 mb-6">Secure your access with ShieldBot’s advanced authentication.</p>
+                <p className="text-lg text-gray-300 mb-6">Secure your access with ShieldBot&apos;s advanced authentication.</p>
 
                 {error && <p className="text-red-500 mb-4">{error}</p>} {/* Show error message if login fails */}
 
@@ -137,7 +136,7 @@ const Login = () => {
 
                 <Link href="/signup">
                     <p className="text-md text-gray-400 mt-6">
-                        Don't have an account? <span className="text-blue-400 hover:underline font-semibold transition duration-300 hover:text-blue-300">Sign up now</span>
+                        Don&apos;t have an account ? <span className="text-blue-400 hover:underline font-semibold transition duration-300 hover:text-blue-300">Sign up now</span>
                     </p>
                 </Link>
             </motion.div>
