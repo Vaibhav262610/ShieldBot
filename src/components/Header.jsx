@@ -39,7 +39,7 @@ const Header = () => {
                 className="relative flex flex-col items-center text-center gap-6 sm:gap-8 md:gap-10 px-4"
             >
                 <div>
-                    <h1 className="font-extrabold text-6xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl md:flex-row flex-col flex gap-6 lg:gap-10 tracking-tight leading-tight text-white drop-shadow-xl">
+                    <h1 className="font-extrabold text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl md:flex-row flex-col flex gap-6 lg:gap-10 tracking-tight leading-tight text-white drop-shadow-xl">
                         Secure Your{" "}
                         <span className="text-green-400 text-5xl sm:text-6xl md:text-7xl">
                             <RotatingText

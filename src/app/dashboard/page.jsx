@@ -71,7 +71,7 @@ const Dashboard = () => {
 
             {/* Sidebar (Hidden on Mobile, Shown on Desktop) */}
             <aside
-                className={`fixed md:relative top-0 left-0 w-64 md:w-24 h-full bg-[#1a1d29] flex flex-col items-center py-10 border-r border-white/10 transition-transform ${menuOpen ? "translate-x-0" : "-translate-x-full"
+                className={`fixed md:relative top-0 left-0 w-full md:w-24 h-full bg-[#1a1d29] flex flex-col items-center py-10 border-r border-white/10 transition-transform ${menuOpen ? "translate-x-0" : "-translate-x-full"
                     } md:translate-x-0 z-40`}
             >
                 <Link href="/">
@@ -137,24 +137,24 @@ const Dashboard = () => {
                             <button
                                 className={`px-4 md:px-6 py-2 md:py-3 text-md md:text-lg rounded-xl ${activeTab === "Layer 4" ? "bg-blue-600" : "bg-gray-700"}`}
                                 onClick={() => setActiveTab("Layer 4")}
-                            >Layer 4</button>
+                            >System 1</button>
                             <button
                                 className={`px-4 md:px-6 py-2 md:py-3 text-md md:text-lg rounded-xl ${activeTab === "Layer 7" ? "bg-blue-600" : "bg-gray-700"}`}
                                 onClick={() => setActiveTab("Layer 7")}
-                            >Layer 7</button>
+                            >System 2</button>
                         </div>
 
-                        <select className="w-full bg-gray-800 p-3 md:p-4 rounded-xl text-md md:text-lg">
+                        <select className="w-full bg-gray-800 p-3 md:p-4 rxounded-xl text-md md:text-lg">
                             <option>GRE (Raw L3 GRE flood)</option>
                         </select>
 
                         <div>
-                            <label className="text-gray-400 text-md md:text-lg">Target</label>
+                            <label className="text-gray-400 text-md md:text-lg">URL</label>
                             <input type="text" placeholder="ex: 1.1.1.1" className="w-full bg-gray-800 p-3 md:p-4 rounded-xl mt-2 text-md md:text-lg" />
                         </div>
 
                         <div>
-                            <label className="text-gray-400 text-md md:text-lg">Time</label>
+                            <label className="text-gray-400 text-md md:text-lg">Workers</label>
                             <input type="number" defaultValue="15" className="w-full bg-gray-800 p-3 md:p-4 rounded-xl mt-2 text-md md:text-lg" />
                         </div>
 

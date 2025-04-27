@@ -10,8 +10,8 @@ const ShootingStar = () => {
     useEffect(() => {
         const generateStars = () => {
             return new Array(10).fill(0).map((_, i) => ({
-                id: i,
                 left: Math.random() * 100 + "vw",
+                id: i,
                 top: Math.random() * 100 + "vh",
                 duration: Math.random() * 3 + 2
             }));
@@ -40,14 +40,6 @@ const ShootingStar = () => {
 
 const teamMembers = [
     {
-        name: "Vaibhav Rajpoot",
-        role: "Full-Stack Developer",
-        image: "https://avatars.githubusercontent.com/u/76393163?v=4",
-        insta: "https://instagram.com/",
-        github: "https://github.com/Vaibhav262610",
-        linkedin: "https://linkedin.com/in/vaibhavrajpoot",
-    },
-    {
         name: "Shashank Kumar",
         role: "DevOps",
         image: "https://avatars.githubusercontent.com/u/109029541?v=4",
@@ -55,6 +47,7 @@ const teamMembers = [
         github: "https://github.com/shashank77665",
         linkedin: "https://linkedin.com/in/",
     },
+   
     {
         name: "Paras Saini",
         role: "Backend Engineer",
@@ -70,6 +63,22 @@ const teamMembers = [
         insta: "https://instagram.com/",
         github: "https://github.com/Dashrath2613",
         linkedin: "https://linkedin.com/in/",
+    },
+    {
+        name: "Yash Chauhan",
+        role: "Documentation",
+        image: "https://www.pngplay.com/wp-content/uploads/12/User-Avatar-Profile-PNG-Free-File-Download.png",
+        insta: "#",
+        github: "#",
+        linkedin: "#",
+    },
+    {
+        name: "Hritika Singh",
+        role: "Documentation",
+        image: "https://cdn-icons-png.flaticon.com/512/2922/2922725.png",
+        insta: "#",
+        github: "#",
+        linkedin: "#",
     },
 ];
 

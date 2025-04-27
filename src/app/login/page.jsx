@@ -56,7 +56,7 @@ const Login = () => {
         console.log("🔍 Sending Login Data:", loginData); // ✅ Logs form data before sending
 
         try {
-            const response = await fetch("http://192.168.250.245:5000/auth/login", {
+            const response = await fetch("http://192.168.250.245:8000/auth/login/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
